@@ -20,3 +20,6 @@
 Route::get('/', 'PagesController@home');
 
 Route::get('about', 'PagesController@about');
+
+Route::get('organs', 'OrgansController@index');
+Route::get('organs/{organ}', 'OrgansController@show');
