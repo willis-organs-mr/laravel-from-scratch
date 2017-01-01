@@ -15,4 +15,9 @@ class Organ extends Model
     {
         return '/organs/' . $this->id;
     }
+
+    public function addNote(Note $note)
+    {
+        return $this->notes()->save($note);
+    }
 }
