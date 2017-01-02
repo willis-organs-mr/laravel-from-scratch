@@ -23,6 +23,7 @@ Route::get('about', 'PagesController@about');
 
 Route::get('organs', 'OrgansController@index');
 Route::get('organs/{organ}', 'OrgansController@show');
+Route::post('organs', 'OrgansController@store');
 
 Route::post('organs/{organ}/notes', 'NotesController@store');
 

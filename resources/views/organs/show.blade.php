@@ -20,12 +20,19 @@
             <form method="POST" action="/organs/{{ $organ->id }}/notes">
                 {{ csrf_field() }}
                 <div class="form-group">
-                    <textarea name="body" id="body" class="form-control" cols="30" rows="10"></textarea>
+                    <textarea name="body" id="body" class="form-control" cols="30" rows="10">{{ old('body') }}</textarea>
                 </div>
                 <div class="form-group">
                     <button type="submit" class="btn btn-std">Add Note</button>
                 </div>
             </form>
+            @if (count($errors))
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
     </div>
 @stop

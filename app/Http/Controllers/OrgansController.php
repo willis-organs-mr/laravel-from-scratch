@@ -25,4 +25,17 @@ class OrgansController extends Controller
         // using route-model-binding
         return view('organs.show', compact('organ'));
     }
+
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'name' => ['required', 'unique:organs,name']
+        ]);
+
+        $organ = new Organ();
+
+        $organ->create($request->all());
+
+        return back();
+    }
 }
