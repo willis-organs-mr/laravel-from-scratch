@@ -7,7 +7,10 @@
 
             <ul class="list-group">
                 @foreach($organ->notes as $note)
-                    <li class="list-group-item">{{ $note->body }}</li>
+                    <li class="list-group-item">{{ $note->body }}
+                        <a href="#"><small>{{ $note->user->username }}</small></a>
+                        <a href="{{ $note->path() }}"><span class="glyphicon glyphicon-pencil pull-right" aria-hidden="true"></span></a>
+                    </li>
                 @endforeach
             </ul>
             

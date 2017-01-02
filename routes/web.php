@@ -25,3 +25,7 @@ Route::get('organs', 'OrgansController@index');
 Route::get('organs/{organ}', 'OrgansController@show');
 
 Route::post('organs/{organ}/notes', 'NotesController@store');
+
+Route::get('notes/{note}/edit', 'NotesController@edit');
+// Use 'patch' for updating
+Route::patch('notes/{note}', 'NotesController@update');

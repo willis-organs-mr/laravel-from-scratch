@@ -19,6 +19,9 @@ class OrgansController extends Controller
         
         // $organ = Organ::find($id);
 
+        // include the notes and user
+        $organ->load('notes.user');
+
         // using route-model-binding
         return view('organs.show', compact('organ'));
     }
